@@ -1,0 +1,35 @@
+Part 1: Examine QSTK_Tutorial_1. You can use that code as a template for this assignment.
+
+
+Part 2: Write a Python function that can simulate and assess the performance of a 4 stock portfolio.
+Inputs to the function include:
+Start date
+End date
+Symbols for for equities (e.g., GOOG, AAPL, GLD, XOM)
+Allocations to the equities at the beginning of the simulation (e.g., 0.2, 0.3, 0.4, 0.1)
+The function should return:
+Standard deviation of daily returns of the total portfolio
+Average daily return of the total portfolio
+Sharpe ratio (Always assume you have 252 trading days in an year. And risk free rate = 0) of the total portfolio
+Cumulative return of the total portfolio
+
+An example of how you might call the function in your program:
+vol, daily_ret, sharpe, cum_ret = simulate(startdate, enddate, ['GOOG','AAPL','GLD','XOM'], [0.2,0.3,0.4,0.1])
+Some assumptions:
+Allocate some amount of value to each equity on the first day. You then "hold" those investments for the entire year.
+Use adjusted close data. In QSTK, this is 'close'
+Report statistics for the entire portfolio
+
+
+Part 2.5: Make sure your simulate() function gives correct output. Check it against the examples below.
+
+
+Part 3: Use your function to create a portfolio optimizer!
+Create a for loop (or nested for loop) that enables you to test every "legal" set of allocations to the 4 stocks. Keep track of the "best" portfolio, and print it out at the end.
+"Legal" set of allocations means: The allocations sum to 1.0. The allocations are in 10% increments.
+Example legal allocations: [1.0, 0.0, 0.0, 0.0], [0.1, 0.1, 0.1, 0.7]
+"Best" portfolio means: Highest Sharpe Ratio.
+
+
+Part 4:
+Create a chart that illustrates the value of your portfolio over the year and compares it to SPY.
